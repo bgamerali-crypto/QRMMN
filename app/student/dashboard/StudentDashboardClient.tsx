@@ -4,7 +4,7 @@ import { useState } from 'react';
 import QRScanner from '@/app/components/QRScanner';
 import { logout } from '@/app/lib/actions';
 import { signOut } from 'next-auth/react';
-import { Loader2, CheckCircle, XCircle, LogOut, Menu, Sparkles } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, LogOut, Menu, Camera } from 'lucide-react';
 
 export default function StudentDashboardClient({ user }: { user: any }) {
     const [isScanning, setIsScanning] = useState(false);
@@ -117,7 +117,7 @@ export default function StudentDashboardClient({ user }: { user: any }) {
                         ) : (
                             <div className="flex flex-col items-center gap-3 sm:gap-4 py-2 sm:py-4">
                                 <div className="w-20 h-20 sm:w-24 sm:h-24 bg-blue-600/20 rounded-[1.5rem] sm:rounded-[2rem] flex items-center justify-center border border-blue-500/20 animate-pulse">
-                                    <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400" />
+                                    <Camera className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400" />
                                 </div>
                                 <div>
                                     <h2 className="text-xl sm:text-2xl font-black text-white mb-1 sm:mb-2 text-balance">Ready to Scan</h2>

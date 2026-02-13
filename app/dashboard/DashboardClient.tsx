@@ -11,7 +11,7 @@ import {
     User, LogOut, CheckCircle, Clock, Users, QrCode,
     History, LayoutDashboard, Settings, Bell, Search,
     ArrowUpRight, Download, PlusSquare,
-    ArrowRight, Menu, X
+    ArrowRight, Menu, X, Info
 } from 'lucide-react';
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -223,6 +223,15 @@ export default function DashboardClient({ user }: { user: any }) {
                                     </div>
 
                                     <div className="space-y-4">
+                                        {typeof window !== 'undefined' && window.location.hostname === 'localhost' && (
+                                            <div className="bg-amber-50 border border-amber-200 p-4 rounded-2xl flex items-start gap-3 text-left">
+                                                <Info className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                                                <p className="text-xs text-amber-800 font-medium">
+                                                    <span className="font-black block mb-1">Localhost Warning</span>
+                                                    You are using 'localhost'. Students won't be able to scan this QR. Please use your computer's IP address (e.g., http://192.168.x.x:3000) instead.
+                                                </p>
+                                            </div>
+                                        )}
                                         <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
                                             <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Session Token</p>
                                             <p className="text-lg sm:text-xl font-mono text-blue-600 font-black break-all">{activeSession.token}</p>

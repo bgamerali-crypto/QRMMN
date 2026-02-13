@@ -1,6 +1,6 @@
 'use server';
 
-import { signIn } from '@/auth';
+import { signIn, signOut } from '@/auth';
 import { supabase } from '@/lib/supabase';
 import { AuthError } from 'next-auth';
 import bcrypt from 'bcryptjs';
@@ -151,4 +151,11 @@ export async function updateProfile(prevState: string | undefined, formData: For
     }
 
     redirect('/dashboard');
+}
+export async function logout() {
+    try {
+        await signOut({ redirect: false });
+    } catch (error) {
+        // NextAuth v5 might throw a redirect, we catch it to handle it on the client
+    }
 }

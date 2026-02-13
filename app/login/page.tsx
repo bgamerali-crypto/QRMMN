@@ -24,20 +24,20 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4 relative overflow-hidden font-sans">
             {/* ... background elements ... */}
-            <div className="max-w-md w-full relative z-10">
-                <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-black/50">
+            <div className="max-w-md w-full relative z-10 px-2 sm:px-0">
+                <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 sm:p-8 md:p-12 shadow-2xl shadow-black/50">
                     <div className="text-center mb-6">
-                        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-3xl shadow-lg shadow-blue-500/30 mb-6 rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-3xl shadow-lg shadow-blue-500/30 mb-6 rotate-3 hover:rotate-0 transition-transform duration-500">
                             {role === 'professor' ? (
-                                <ShieldCheck className="w-10 h-10 text-white" />
+                                <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                             ) : (
-                                <User className="w-10 h-10 text-white" />
+                                <User className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                             )}
                         </div>
-                        <h1 className="text-4xl font-extrabold text-white tracking-tight mb-2">
+                        <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-2">
                             {role === 'professor' ? 'Professor Portal' : 'Student Portal'}
                         </h1>
-                        <p className="text-slate-400 text-lg">Secure attendance management</p>
+                        <p className="text-slate-400 text-base sm:text-lg">Secure attendance management</p>
                     </div>
 
                     {/* Role Selector */}

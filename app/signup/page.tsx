@@ -18,23 +18,15 @@ export default function SignUpPage() {
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px]"></div>
             <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-600/10 rounded-full blur-[120px]"></div>
 
-            <div className="max-w-md w-full relative z-10">
-                <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 shadow-2xl">
+            <div className="max-w-md w-full relative z-10 px-2 sm:px-0">
+                <div className="bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-6 sm:p-8 md:p-10 shadow-2xl">
                     <div className="text-center mb-8">
-                        <h1 className="text-3xl font-black text-white tracking-tight mb-2">Create Account</h1>
-                        <p className="text-slate-400">Choose your role to get started</p>
+                        <h1 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2 text-balance">Create Account</h1>
+                        <p className="text-slate-400 text-sm sm:text-base">Choose your role to get started</p>
                     </div>
 
                     {/* Role Selector */}
                     <div className="flex p-1 bg-white/[0.05] rounded-2xl mb-8 border border-white/5">
-                        <button
-                            onClick={() => setRole('professor')}
-                            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl transition-all duration-300 font-bold ${role === 'professor' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'
-                                }`}
-                        >
-                            <Briefcase className="w-4 h-4" />
-                            Professor
-                        </button>
                         <button
                             onClick={() => setRole('student')}
                             className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl transition-all duration-300 font-bold ${role === 'student' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'
@@ -42,6 +34,15 @@ export default function SignUpPage() {
                         >
                             <GraduationCap className="w-4 h-4" />
                             Student
+                        </button>
+
+                        <button
+                            onClick={() => setRole('professor')}
+                            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl transition-all duration-300 font-bold ${role === 'professor' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-400 hover:text-white'
+                                }`}
+                        >
+                            <Briefcase className="w-4 h-4" />
+                            Professor
                         </button>
                     </div>
 

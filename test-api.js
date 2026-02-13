@@ -1,4 +1,5 @@
-const fetch = require('node-fetch');
+// Native fetch is available in Node.js 18+
+
 
 async function testSessionApi() {
     console.log("Testing Session API...");
@@ -7,7 +8,7 @@ async function testSessionApi() {
         const res = await fetch('http://localhost:3000/api/session');
         const status = res.status;
         console.log(`API Status: ${status}`);
-        
+
         if (status === 401) {
             console.log("✅ API is protected by Auth (Expected).");
         } else if (status === 200) {
